@@ -1,7 +1,18 @@
 input {
-    margin: 75px 0 0 75px;
+    background-color: rgb(239 239 239 / 35%);
     font-size: 19px;
     padding: 20px;
-    border-radius: 16px;
-    border: 1px solid #efefef;
+    margin-bottom: 50px;
+    color: #fff;
+
+    background: rgba(245, 214, 214, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+input::placeholder {
+    color: #fff;
 }

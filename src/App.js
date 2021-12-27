@@ -29,7 +29,7 @@ class App extends Component {
     );
 
     return (
-      <div>
+      <div className="container">
         <SearchFilter
           placeholder="Search trough list"
           handleChange={this.handleChange}
