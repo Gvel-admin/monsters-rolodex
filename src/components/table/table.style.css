@@ -1,0 +1,28 @@
+table {
+    border-spacing: 0;
+    border: 1px solid #efefef;
+    margin: 75px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    width: 100%;
+}
+
+tr:nth-child(even) {
+    background-color: #efefef;
+}
+
+td {
+
+    padding: 20px;
+    border: 0;
+}
+
+td img {
+    height: 30px;
+    width: auto;
+    border-radius: 50%;
+    border: 1px solid #e3e3e3;
+    box-shadow: 1px 1px 1px 0px #6c6c6c;
+    background-color: #ffffff;
+    vertical-align: middle;
+}
