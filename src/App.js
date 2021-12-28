@@ -47,7 +47,7 @@ class App extends Component {
         <div className="container">
           <h1>User list</h1>
           <SearchFilter
-            placeholder="Search trough list"
+            placeholder="Search a name"
             handleChange={this.handleFilterChange}
           />
           <p>
@@ -55,7 +55,11 @@ class App extends Component {
           </p>
         </div>
         <div className="container">
-          <Table monsters={filteredList} />
+          {filteredList.length > 0 ? (
+            <Table monsters={filteredList} />
+          ) : (
+            <span className="warning">No data... Try another name.</span>
+          )}
         </div>
         <hr />
         <div className="container">

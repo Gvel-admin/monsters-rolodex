@@ -1,7 +1,7 @@
 table {
     border-spacing: 0;
     background: rgba(245, 214, 214, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(31, 135, 62, 0.37);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
@@ -16,7 +16,7 @@ thead {
 
 tr:nth-child(even) {
     background-color: rgb(239 239 239 / 35%);
-    ;
+
 }
 
 td {
