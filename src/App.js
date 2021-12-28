@@ -11,7 +11,6 @@ class App extends Component {
       searchField: '',
       title: 'User',
       answer: 47,
-      totalMonster: 0,
     };
   }
 
@@ -22,7 +21,9 @@ class App extends Component {
   }
 
   handleFilterChange = (e) => {
-    this.setState({ searchField: e.target.value });
+    this.setState({
+      searchField: e.target.value.length < 3 ? '' : e.target.value,
+    });
   };
 
   handleIncrement = () => {
@@ -50,7 +51,7 @@ class App extends Component {
             handleChange={this.handleFilterChange}
           />
           <p>
-            Total monster: <strong>{filteredList.length}</strong>
+            Total user(s): <strong>{filteredList.length}</strong>
           </p>
         </div>
         <div className="container">
