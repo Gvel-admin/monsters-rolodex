@@ -4,11 +4,14 @@ import { Table } from './components/table/table.component';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       monsters: [],
       searchField: '',
+      title: 'User',
+      answer: 47,
+      totalMonster: 0,
     };
   }
 
@@ -18,24 +21,48 @@ class App extends Component {
       .then((users) => this.setState({ monsters: users }));
   }
 
-  handleChange = (e) => {
+  handleFilterChange = (e) => {
     this.setState({ searchField: e.target.value });
   };
 
+  handleIncrement = () => {
+    this.setState(
+      (prevState, prevProps) => {
+        return { answer: prevState.answer + prevProps.increment };
+      },
+      () => console.log(this.state.answer)
+    );
+  };
+
   render() {
-    const { monsters, searchField } = this.state;
+    const { monsters, searchField, answer } = this.state;
+
     const filteredList = monsters.filter((monster) =>
       monster.name.toLowerCase().includes(searchField.toLowerCase())
     );
 
     return (
-      <div className="container">
-        <SearchFilter
-          placeholder="Search trough list"
-          handleChange={this.handleChange}
-        />
-        <Table monsters={filteredList} />
-      </div>
+      <>
+        <div className="container">
+          <h1>User list</h1>
+          <SearchFilter
+            placeholder="Search trough list"
+            handleChange={this.handleFilterChange}
+          />
+          <p>
+            Total monster: <strong>{filteredList.length}</strong>
+          </p>
+        </div>
+        <div className="container">
+          <Table monsters={filteredList} />
+        </div>
+        <hr />
+        <div className="container">
+          <h2>Misc</h2>
+          <p>{answer}</p>
+          <button onClick={this.handleIncrement}>Increment</button>
+        </div>
+      </>
     );
   }
 }
